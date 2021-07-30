@@ -19,7 +19,7 @@ function Films() {
     <>
       <Header
         onChange={(value) =>
-          setFilteredFilms(films.filter((item) => item.title.startsWith(value)))
+          setFilteredFilms(films.filter((item) => item.title.toLowerCase().startsWith(value.toLowerCase())))
         }
       />
       <div className="container">
