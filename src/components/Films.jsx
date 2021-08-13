@@ -19,16 +19,20 @@ function Films() {
     <>
       <Header
         onChange={(value) =>
-          setFilteredFilms(films.filter((item) => item.title.toLowerCase().startsWith(value.toLowerCase())))
+          setFilteredFilms(
+            films.filter((item) =>
+              item.title.toLowerCase().startsWith(value.toLowerCase())
+            )
+          )
         }
       />
       <div className="container">
-        {filteredFilms.map((item) => (
-          <Film film={item} />
+        {filteredFilms.map((item, index) => (
+          <Film key={index} film={item} />
         ))}
       </div>
     </>
   );
-};
+}
 
-export default Films
+export default Films;
